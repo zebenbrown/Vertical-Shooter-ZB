@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7617321825975252597}
   - component: {fileID: 2018030336555535802}
   m_Layer: 0
-  m_Name: Hexagon Flat-Top
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

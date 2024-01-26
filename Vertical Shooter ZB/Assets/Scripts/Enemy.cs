@@ -32,7 +32,20 @@ public class Enemy : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("down");
-        gameObject.SetActive(false);
+       
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Laser"))
+        {
+            Despawn();
+        }
+    }
+
+    private void Despawn()
+    {
+         gameObject.SetActive(false);
         GameManager.instance.UnListEnemy(gameObject);
     }
 }
