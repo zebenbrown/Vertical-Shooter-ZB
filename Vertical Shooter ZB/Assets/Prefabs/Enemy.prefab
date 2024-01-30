@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: 0c82c00a8befd472896ff639da721a89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 902691ce9f4324328b8d991b5b6c5323, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,7 +150,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 16.4, y: 23.603092}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,12 +158,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25, y: 0.43359375}
-      - {x: -0.5, y: 0}
-      - {x: -0.25, y: -0.43359375}
-      - {x: 0.25, y: -0.43359375}
-      - {x: 0.5, y: 0}
-      - {x: 0.25, y: 0.43359375}
+    - - {x: 1.0300778, y: 4.174652}
+      - {x: -0.2065118, y: 4.3584886}
+      - {x: -1.2784098, y: 4.1629786}
+      - {x: -2.0905895, y: 3.760162}
+      - {x: -2.8375814, y: 3.1389964}
+      - {x: -3.4652739, y: 2.1836596}
+      - {x: -3.7294989, y: 1.0509776}
+      - {x: -3.522618, y: -0.32083508}
+      - {x: -3.0687838, y: -1.1546547}
+      - {x: -2.6252728, y: -1.668736}
+      - {x: -1.9190452, y: -2.190332}
+      - {x: -1.1618508, y: -2.5274744}
+      - {x: -0.07142225, y: -2.6625662}
+      - {x: 0.85790217, y: -2.5274746}
+      - {x: 1.6818713, y: -2.2297156}
+      - {x: 2.5263352, y: -1.5872954}
+      - {x: 3.0123277, y: -1.0034337}
+      - {x: 3.354692, y: -0.29616672}
+      - {x: 3.5282245, y: 1.1370372}
+      - {x: 3.4233837, y: 1.7461774}
+      - {x: 3.1169333, y: 2.547318}
+      - {x: 2.0737016, y: 3.6250741}
   m_UseDelaunayMesh: 0
 --- !u!114 &2018030336555535802
 MonoBehaviour:
@@ -177,4 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc7090e2362349dabba53e75f4f8bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 4064456050845143313, guid: 88c7cb71bfde84253a07afdd01a742fb, type: 3}
   respawnY: 16

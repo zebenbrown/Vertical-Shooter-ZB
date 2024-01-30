@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
+
 {
+    //public Health health;
+    //var HealthComponent;
 
     [SerializeField] private float speed = 10f;
     [SerializeField] private float lifeTime = 1f;
@@ -24,4 +27,16 @@ public class Laser : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+   
+    //Working on Damage Function
+    /*private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+             HealthComponent = HealthComponent.GetComponent<Health>();
+            health.TakeDamage(5);
+
+        }
+    }*/
 }

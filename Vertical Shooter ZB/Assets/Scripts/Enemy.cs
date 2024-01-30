@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private float respawnY = 10f;
 
+    
     private float _respawnX;
 
     private Rigidbody2D _RigidBody2D;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _RigidBody2D = GetComponent<Rigidbody2D>();
+
     }
     // Start is called before the first frame update
     void Start()
@@ -32,8 +34,9 @@ public class Enemy : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("down");
-       
+     
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,9 +46,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Despawn()
+
+   private void Despawn()
     {
-         gameObject.SetActive(false);
+        gameObject.SetActive(false);
         GameManager.instance.UnListEnemy(gameObject);
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
     }
 }

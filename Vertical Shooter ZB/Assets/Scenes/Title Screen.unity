@@ -921,7 +921,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1863767331}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
@@ -979,12 +979,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1863767326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cac1157d5d7044e992dd1ffd506c446, type: 3}
+  m_Script: {fileID: 11500000, guid: 162b611cc6b694b59b7b30f6096f7184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyArray: []
-  activeEnemyList: []
-  sceneName: Enemies
+  sceneName: Audio and UI
 --- !u!1 &1896105408
 GameObject:
   m_ObjectHideFlags: 0
