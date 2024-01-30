@@ -195,3 +195,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 4064456050845143313, guid: 88c7cb71bfde84253a07afdd01a742fb, type: 3}
   respawnY: 16
+  health: {fileID: 0}

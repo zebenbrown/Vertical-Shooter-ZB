@@ -8,8 +8,8 @@ public class Health : MonoBehaviour
 
 {
 
-  public int maxHealth = 10;
-        public int currentHealth;
+  //public int maxHealth = 30;
+        public int startingHealth;
     public TextMeshProUGUI HealthText;
 
     [SerializeField] private string sceneName;
@@ -19,29 +19,29 @@ public class Health : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    
+
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        startingHealth = 30;
     }
 
-    /*public void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
+       startingHealth -= amount;
+        
 
-        HealthText.text = "Health: " + currentHealth.ToString();
+        HealthText.text = "Health: " + startingHealth.ToString();
 
-        if (currentHealth <= 0)
+        if (startingHealth <= 0)
         {
             LoadScene();
         }
-
-    }*/
+    }
         
     private void Update()
     {
-        HealthText.text = "Health: " + currentHealth.ToString();
+        HealthText.text = "Health: " + startingHealth.ToString();
 
     }
 

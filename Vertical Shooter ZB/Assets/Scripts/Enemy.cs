@@ -7,6 +7,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private float respawnY = 10f;
 
+    public Health health;
+
+    private Enemy enemy;
+
+    private Health playerHealth;
     
     private float _respawnX;
 
@@ -15,6 +20,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _RigidBody2D = GetComponent<Rigidbody2D>();
+        playerHealth = GetComponent<Health>();
 
     }
     // Start is called before the first frame update
@@ -23,7 +29,7 @@ public class Enemy : MonoBehaviour
         _respawnX = transform.position.x;
     }
 
-    
+    //Enemy Respawns
     public void Respawn()
     {
         gameObject.SetActive(true);
@@ -37,20 +43,30 @@ public class Enemy : MonoBehaviour
      
     }
 
-
+    //Enemy Enters a Trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Laser"))
+        //Laser hits Enemy and the enemy despawns
+        if (other.gameObject.tag == "Laser")
         {
             Despawn();
         }
+        //Player takes Damage from colliding with the enemy
+        else if (other.gameObject.tag == "Player")
+        {
+        
+            health.TakeDamage(5);
+            Debug.Log(health.startingHealth);
+        }
     }
 
-
-   private void Despawn()
+    //Enemy Despawns
+    private void Despawn()
     {
         gameObject.SetActive(false);
         GameManager.instance.UnListEnemy(gameObject);
         Instantiate(explosionPrefab, transform.position, transform.rotation);
     }
+    
+    
 }
