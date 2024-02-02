@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
         activeEnemyList.Remove(enemy);
         if (activeEnemyList.Count == 0)
         {
-            //ResetAllEnemies();
-            StartCoroutine(Co_ResetAllEnemiesDelayed(2f));
+            ResetAllEnemies();
+            //StartCoroutine(Co_ResetAllEnemiesDelayed(2f));
         }
     }
 
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(var enemy in enemyArray)
         {
-            enemy.GetComponent<Enemy>().Respawn();
+            enemy.GetComponent<Enemy>().RepositionEnemy();
             activeEnemyList.Add(enemy);
         }
     }

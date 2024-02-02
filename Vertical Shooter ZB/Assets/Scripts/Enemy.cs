@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private GameObject explosionPrefab;
-    [SerializeField] private float respawnY = 10f;
+    //[SerializeField] private float respawnY = 10f;
 
     public Health health;
 
@@ -26,16 +26,22 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _respawnX = transform.position.x;
+        //_respawnX = transform.position.x;
+
+        if (tag == "Enemy")
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(0.0f, -5.0f);
+        }
     }
 
     //Enemy Respawns
-    public void Respawn()
+   /* public void Respawn()
     {
         gameObject.SetActive(true);
         transform.position = new Vector2(_respawnX, respawnY);
         _RigidBody2D.velocity = Vector2.zero;
-    }
+    }*/
 
     private void OnMouseDown()
     {
@@ -50,13 +56,20 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Laser")
         {
             Despawn();
+
+            //RepositionEnemy();
         }
         //Player takes Damage from colliding with the enemy
         else if (other.gameObject.tag == "Player")
         {
-        
+
             health.TakeDamage(5);
             Debug.Log(health.startingHealth);
+        }
+
+        else if(other.gameObject.tag == "Barrier")
+        {
+            RepositionEnemy();
         }
     }
 
@@ -67,6 +80,30 @@ public class Enemy : MonoBehaviour
         GameManager.instance.UnListEnemy(gameObject);
         Instantiate(explosionPrefab, transform.position, transform.rotation);
     }
-    
+    public void RepositionEnemy()
+    {
+        Debug.Log("Respawn");
+        
+        
+
+        gameObject.SetActive(true);
+        float newX = Random.Range(-9, 9);
+        float newY = Random.Range(31, 31);
+        Debug.Log("NewX = " + newX);
+        Vector2 newpos = new Vector2(newX, newY);
+        transform.position = newpos;
+
+        if (tag == "Enemy")
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(0.0f, -5.0f);
+        }
+
+        else if (tag == "Player")
+        {
+            health.TakeDamage(5);
+            Debug.Log(health.startingHealth);
+        }
+    }
     
 }

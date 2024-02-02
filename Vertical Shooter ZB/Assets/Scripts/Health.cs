@@ -9,8 +9,9 @@ public class Health : MonoBehaviour
 {
 
   //public int maxHealth = 30;
-        public int startingHealth;
+    public int startingHealth;
     public TextMeshProUGUI HealthText;
+    public int amount;
 
     [SerializeField] private string sceneName;
 
@@ -26,7 +27,7 @@ public class Health : MonoBehaviour
         startingHealth = 30;
     }
 
-    public void TakeDamage(int amount)
+    public bool TakeDamage(int amount)
     {
        startingHealth -= amount;
         
@@ -37,11 +38,16 @@ public class Health : MonoBehaviour
         {
             LoadScene();
         }
+        return true;
     }
         
     private void Update()
     {
         HealthText.text = "Health: " + startingHealth.ToString();
+        if (TakeDamage(amount) == true)
+        {
+            TakeDamage(amount);
+        }
 
     }
 

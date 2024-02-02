@@ -8,7 +8,7 @@ public class EnemyRespawnTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Enemy>().Respawn();
+            other.gameObject.GetComponent<Enemy>().RepositionEnemy();
         }
     }
 }
