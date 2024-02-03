@@ -5,8 +5,6 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 
 {
-    //public Health health;
-    //var HealthComponent;
 
     [SerializeField] private float speed = 10f;
     [SerializeField] private float lifeTime = 1f;

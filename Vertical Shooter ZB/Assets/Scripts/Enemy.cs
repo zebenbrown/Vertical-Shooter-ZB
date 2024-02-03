@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     private Enemy enemy;
 
     private Health playerHealth;
+
+    public Score score;
     
     private float _respawnX;
 
@@ -56,15 +58,14 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Laser")
         {
             Despawn();
-
-            //RepositionEnemy();
+            //Adds score enemies are destroyed
+            score.addScore(1);
         }
         //Player takes Damage from colliding with the enemy
         else if (other.gameObject.tag == "Player")
         {
 
             health.TakeDamage(5);
-            Debug.Log(health.startingHealth);
         }
 
         else if(other.gameObject.tag == "Barrier")
@@ -79,6 +80,7 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
         GameManager.instance.UnListEnemy(gameObject);
         Instantiate(explosionPrefab, transform.position, transform.rotation);
+        
     }
     public void RepositionEnemy()
     {

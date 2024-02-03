@@ -12,7 +12,5 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-
-
 }
     
