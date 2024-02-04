@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     private float _respawnX;
 
     private Rigidbody2D _RigidBody2D;
+    private bool addToScore;
 
     private void Awake()
     {
@@ -58,8 +59,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Laser")
         {
             Despawn();
-            //Adds score enemies are destroyed
-            score.addScore(1);
+            RepositionEnemy(true);
         }
         //Player takes Damage from colliding with the enemy
         else if (other.gameObject.tag == "Player")
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
         else if(other.gameObject.tag == "Barrier")
         {
-            RepositionEnemy();
+            RepositionEnemy(false);
         }
     }
 
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         
     }
-    public void RepositionEnemy()
+    public void RepositionEnemy(bool addToScore)
     {
         Debug.Log("Respawn");
         
@@ -99,12 +99,17 @@ public class Enemy : MonoBehaviour
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(0.0f, -5.0f);
+            
         }
 
         else if (tag == "Player")
         {
             health.TakeDamage(5);
             Debug.Log(health.startingHealth);
+        }
+        if (addToScore == true)
+        {
+            score.addScore(1);
         }
     }
     

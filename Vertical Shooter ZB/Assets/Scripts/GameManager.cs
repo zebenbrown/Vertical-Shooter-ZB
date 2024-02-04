@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(var enemy in enemyArray)
         {
-            enemy.GetComponent<Enemy>().RepositionEnemy();
+            enemy.GetComponent<Enemy>().RepositionEnemy(false);
             activeEnemyList.Add(enemy);
         }
     }

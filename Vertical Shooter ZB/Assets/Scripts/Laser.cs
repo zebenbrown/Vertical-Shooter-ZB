@@ -7,7 +7,7 @@ public class Laser : MonoBehaviour
 {
 
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float lifeTime = 1f;
+    [SerializeField] private float lifeTime = 0.5f;
     private float _life = 0f;
 
     // Start is called before the first frame update

@@ -6,11 +6,16 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private int score;
+    public TextMeshProUGUI highScoreNumber;
+    public TextMeshProUGUI highScoreText;
+    public int score;
     private void Start()
     {
         score = 0;
         UpdateScoreDisplay();
+
+        highScoreText.text = "High Score: ".ToString();
+        highScoreNumber.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
 
     }
 
@@ -18,17 +23,16 @@ public class Score : MonoBehaviour
     {
         score += pointsToAdd;
         UpdateScoreDisplay();
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScoreNumber.text = score.ToString();
+        }
     }
     void UpdateScoreDisplay()
     {
-        if (scoreText != null)
-        {
             scoreText.text = "Score: " + score.ToString();
-        }
-
-        else
-        {
-            Debug.Log("Score text is null");
-        }
     }
+
+
 }
