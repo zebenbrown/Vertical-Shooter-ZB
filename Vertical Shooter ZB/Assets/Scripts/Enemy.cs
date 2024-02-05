@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     private Health playerHealth;
 
     public Score score;
+
+    public AudioClip deathClip;
     
     private float _respawnX;
 
@@ -58,6 +60,7 @@ public class Enemy : MonoBehaviour
         //Laser hits Enemy and the enemy despawns
         if (other.gameObject.tag == "Laser")
         {
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Despawn();
             RepositionEnemy(true);
         }
@@ -112,5 +115,4 @@ public class Enemy : MonoBehaviour
             score.addScore(1);
         }
     }
-    
 }
