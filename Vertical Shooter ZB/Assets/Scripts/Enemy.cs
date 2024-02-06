@@ -81,20 +81,20 @@ public class Enemy : MonoBehaviour
     private void Despawn()
     {
         gameObject.SetActive(false);
-        GameManager.instance.UnListEnemy(gameObject);
+        //GameManager.instance.UnListEnemy(gameObject);
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         
     }
     public void RepositionEnemy(bool addToScore)
     {
-        Debug.Log("Respawn");
+        //Debug.Log("Respawn");
         
         
 
         gameObject.SetActive(true);
         float newX = Random.Range(-9, 9);
         float newY = Random.Range(31, 31);
-        Debug.Log("NewX = " + newX);
+        //Debug.Log("NewX = " + newX);
         Vector2 newpos = new Vector2(newX, newY);
         transform.position = newpos;
 
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
         else if (tag == "Player")
         {
             health.TakeDamage(5);
-            Debug.Log(health.startingHealth);
+            //Debug.Log(health.startingHealth);
         }
         if (addToScore == true)
         {

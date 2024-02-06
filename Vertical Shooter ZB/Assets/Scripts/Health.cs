@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 
 {
 
-  //public int maxHealth = 30;
+  
     public int startingHealth;
     public TextMeshProUGUI HealthText;
     public int amount;
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        startingHealth = 30;
+        startingHealth = 20;
     }
 
     public bool TakeDamage(int amount)

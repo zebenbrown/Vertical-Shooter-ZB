@@ -139,13 +139,17 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1386932685}
+    - target: {fileID: 2018030336555535802, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 7.84
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 24.02
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -223,7 +227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -612.57, y: 16.299988}
+  m_AnchoredPosition: {x: -667, y: 18.77002}
   m_SizeDelta: {x: 173.17, y: 38.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213188465
@@ -776,13 +780,17 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1386932685}
+    - target: {fileID: 2018030336555535802, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 20.75
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -984,7 +992,7 @@ Transform:
   m_GameObject: {fileID: 1034785672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.31, z: 0}
+  m_LocalPosition: {x: -0.05, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1572,7 +1580,8 @@ MonoBehaviour:
   scoreText: {fileID: 2143352360}
   highScoreNumber: {fileID: 1027832964}
   highScoreText: {fileID: 571043061}
-  score: 0
+  FinalScoreText: {fileID: 0}
+  currentScore: 0
 --- !u!1 &1461116705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,6 +1890,10 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1386932685}
+    - target: {fileID: 2018030336555535802, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
     - target: {fileID: 7151621634202116043, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: sceneName
       value: Game Over
@@ -1891,11 +1904,11 @@ PrefabInstance:
       objectReference: {fileID: 213188465}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 17.2
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1958,13 +1971,17 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1386932685}
+    - target: {fileID: 2018030336555535802, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -3.92
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 22.88
       objectReference: {fileID: 0}
     - target: {fileID: 7422724228685788477, guid: f0c71f37cf2cd40cfa0eb03e1d0a1f7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2055,11 +2072,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

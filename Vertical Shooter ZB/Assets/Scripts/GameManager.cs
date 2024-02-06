@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-
     [SerializeField] private GameObject[] enemyArray;
     [SerializeField] private List<GameObject> activeEnemyList;
 
@@ -21,19 +20,19 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
-        activeEnemyList = new List<GameObject>(enemyArray);
+        //activeEnemyList = new List<GameObject>(enemyArray);
     }
 
-    public void UnListEnemy(GameObject enemy)
-    {
-        
-        activeEnemyList.Remove(enemy);
-        if (activeEnemyList.Count == 0)
-        {
-            ResetAllEnemies();
-            //StartCoroutine(Co_ResetAllEnemiesDelayed(2f));
-        }
-    }
+    //public void UnListEnemy(GameObject enemy)
+    //{
+
+    //    activeEnemyList.Remove(enemy);
+    //    if (activeEnemyList.Count == 0)
+    //    {
+    //        ResetAllEnemies();
+    //        //StartCoroutine(Co_ResetAllEnemiesDelayed(2f));
+    //    }
+    //}
 
     private IEnumerator Co_ResetAllEnemiesDelayed(float delay)
     {
@@ -43,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetAllEnemies()
     {
-        foreach(var enemy in enemyArray)
+        foreach (var enemy in enemyArray)
         {
             enemy.GetComponent<Enemy>().RepositionEnemy(false);
             activeEnemyList.Add(enemy);
@@ -58,6 +57,7 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        PlayerPrefs.DeleteKey("HighScore");
     }
 
     public void RestartLevel()

@@ -5,34 +5,36 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
+    private GameOver gameOver;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreNumber;
     public TextMeshProUGUI highScoreText;
-    public int score;
-    private void Start()
+    public TextMeshProUGUI FinalScoreText;
+    public int currentScore;
+    public void Start()
     {
-        score = 0;
+        currentScore = 0;
         UpdateScoreDisplay();
 
         highScoreText.text = "High Score: ".ToString();
         highScoreNumber.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
-
     }
 
     public void addScore(int pointsToAdd)
     {
-        score += pointsToAdd;
+        currentScore += pointsToAdd;
+
         UpdateScoreDisplay();
-        if (score > PlayerPrefs.GetInt("HighScore", 0))
+
+        if (currentScore > PlayerPrefs.GetInt("HighScore", 0))
         {
-            PlayerPrefs.SetInt("HighScore", score);
-            highScoreNumber.text = score.ToString();
+            PlayerPrefs.SetInt("HighScore", currentScore);
+            highScoreNumber.text = currentScore.ToString();
         }
     }
-    void UpdateScoreDisplay()
+    public void UpdateScoreDisplay()
     {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Score: " + currentScore.ToString();
+            PlayerPrefs.SetInt("CurrentScore", currentScore);
     }
-
-
 }
